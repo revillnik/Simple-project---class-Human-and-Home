@@ -24,3 +24,6 @@ class Human:
         print("Дом стоит", price, "рублей")
         return self.pay_house(money, price)
 
+Nikita = Human('Никита', 25)
+Nikita.info()
+Nikita.buy_house(1500000)
