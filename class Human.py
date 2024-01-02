@@ -56,9 +56,30 @@ class Human:
     def __getattr__(self, item):
         print("Такого свойства у объекта и класса нет!")
         return False
+
     def __delattr__(self, item):
         print("Вы удалили свойство объекта:", item)
         return object.__delattr__(self, item)
+
+    @property
+    def money(self):
+        return self.__money
+    @money.setter
+    def money(self, money):
+        self.__money = money
+    @money.deleter
+    def money(self):
+        del self.__money    
+    @property
+    def house(self):
+        return self.__house
+    @house.setter
+    def house(self, house):
+        self.__house = house
+    @house.deleter
+    def house(self):
+        del self.__house
+        
 
 
 print(
@@ -70,3 +91,4 @@ Nikita.private_info()
 Nikita.buy_house()
 Nikita.private_house()
 Nikita.private_info()
+
